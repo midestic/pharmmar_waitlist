@@ -10,7 +10,7 @@ import { sectionVariants } from "@/app/utils/variants";
 
 export default function Home() {
   return (
-    <div className="overflow-x-hidden scrollbar-hide">
+    <div className="overflow-x-hidden scrollbar-hide pt-[100px]">
       {[HeroSection, HowItWorks, WhyChoose, WaitlistFAQ, Join].map(
         (Section, index) => (
           <motion.div
