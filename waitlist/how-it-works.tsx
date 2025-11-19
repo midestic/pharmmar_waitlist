@@ -51,7 +51,7 @@ export default function HowItWorks() {
             <span className="font-dmserif italic font-[600] text-[48px] leading-[105%] tracking-[-0.05em] text-[#15899F] max-md:text-[28px]">
               Pharmacies
             </span>{" "}
-            <span className="font-dmsans font-medium text-[40px] leading-[105%] tracking-[-0.05em] text-[#1D242D] max-md:text-[24px]">
+            <span className=" ml-2 font-dmsans font-medium text-[40px] leading-[105%] tracking-[-0.05em] text-[#1D242D] max-md:text-[24px]">
               {" "}
               Use Phammar
             </span>

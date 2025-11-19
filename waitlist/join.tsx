@@ -22,7 +22,7 @@ export default function Join() {
                 Join the Future
               </span>
 
-              <span className="font-dmsans font-semibold text-[48px] leading-[100%] tracking-[0] text-[#1D242D] max-md:text-[32px]">
+              <span className="ml-2 font-dmsans font-semibold text-[48px] leading-[100%] tracking-[0] text-[#1D242D] max-md:text-[32px]">
                 of <br className="max-md:hidden" /> Pharmaceutical Distribution
               </span>
             </p>

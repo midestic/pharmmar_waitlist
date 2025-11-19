@@ -64,7 +64,7 @@ export default function HeroSection() {
             <span className="font-dmserif italic font-[600] text-[56px] text-[#179AB3] leading-[120%] tracking-[-0.06em] text-[#1D242D] max-md:text-[36px]">
               Pharmaceutical <br className="max-md:hidden" /> Distribution
             </span>
-            <span className="font-dmsans font-medium text-[48px] leading-[120%] tracking-[-0.06em] text-[#1D242D] max-md:text-[32px]">
+            <span className="font-dmsans font-medium text-[48px] leading-[120%] tracking-[-0.06em] text-[#1D242D] max-md:text-[32px] ml-2">
               in Africa
             </span>
           </p>
