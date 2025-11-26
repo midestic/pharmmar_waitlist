@@ -150,27 +150,20 @@ button {
   scrollbar-width: none;
 }
 
-.hover-flip {
-  display: inline-block;
-  transform-origin: center;
-  cursor: pointer;
-  transition: transform 0.6s ease;
+.float-bounce {
+  animation: floatBounce 2.6s ease-in-out infinite;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
 }
 
-.hover-flip {
-  animation: hoverSpin 1.2s infinite linear;
-}
-
-@keyframes hoverSpin {
-  0% {
-    transform: rotateY(0deg);
-  }
-  /* 50% {
-    transform: rotateY(200deg);
-  } */
-
+@keyframes floatBounce {
+  0%,
   100% {
-    transform: rotateY(360deg);
+    transform: translateY(0);
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+  }
+  50% {
+    transform: translateY(-14px);
+    filter: drop-shadow(0 20px 20px rgba(0, 0, 0, 0.15));
   }
 }
 

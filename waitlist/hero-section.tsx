@@ -1,8 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Brands from "./brands";
-import { motion } from "framer-motion";
-
+import { motion, useMotionTemplate, useAnimate } from "framer-motion";
 export default function HeroSection() {
   return (
     <div className="p-[24px] max-md:p-[16px] bg-white flex flex-col gap-[10px]">
@@ -25,38 +24,44 @@ export default function HeroSection() {
         <div className="flex flex-col gap-[32px] items-center max-md:px-[16px]">
           <motion.div
             className="bg-white py-[12px] px-[16px] border border-[#EBEEF2] flex items-center gap-[8px] rounded-full max-md:hidden cursor-pointer"
-            whileHover={{
-              scale: 1.05,
-              boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.08)",
-            }}
-            transition={{
-              type: "spring",
-              stiffness: 300,
-              damping: 15,
-            }}
+            // Removed whileHover from the container — no scaling/shadow here
           >
             <Image src="/icons/share.svg" height={18} width={18} alt="share" />
 
             <p className="font-[600] text-[14px] text-[#47586E]">
-              JOIN THOUSANDS OF PHARMACIST AND DISTRUBUTORS
+              JOIN THOUSANDS OF PHARMACIST AND DISTRIBUTORS
             </p>
 
-            <p className="font-[600] text-[14px] text-[#179AB3]">
-              <a href="#waitlist">JOIN WAITLIST</a>
-            </p>
-
+            {/* This wrapper will handle the hover scale only for text + arrow */}
             <motion.div
-              whileHover={{ x: 4 }}
-              transition={{ type: "spring", stiffness: 300, damping: 10 }}
+              className="flex items-center gap-[8px]"
+              whileHover={{ scale: 1.1 }}
+              transition={{ type: "spring", stiffness: 400, damping: 15 }}
             >
-              <Image
-                src="/icons/waitlist-arrow-right.svg"
-                height={18}
-                width={18}
-                alt="arrow"
-              />
+              {/* The text that scales */}
+              <motion.p
+                className="font-[600] text-[14px] text-[#179AB3] origin-left"
+                // Optional: add subtle color brighten on hover
+                whileHover={{ color: "#11a8c5" }}
+              >
+                <a href="#waitlist">JOIN WAITLIST</a>
+              </motion.p>
+
+              {/* The arrow that moves right */}
+              <motion.div
+                whileHover={{ x: 6 }}
+                transition={{ type: "spring", stiffness: 400, damping: 12 }}
+                className="flex-shrink-0"
+              >
+                <Image
+                  src="/icons/waitlist-arrow-right.svg"
+                  height={18}
+                  width={18}
+                  alt="arrow"
+                />
+              </motion.div>
             </motion.div>
-          </motion.div>
+          </motion.div>{" "}
           <p className="text-center mx-auto">
             <span className="font-dmsans font-medium text-[48px] leading-[120%] tracking-[-0.06em] text-[#1D242D] max-md:text-[32px]">
               Empowering{" "}
@@ -68,13 +73,11 @@ export default function HeroSection() {
               in Africa
             </span>
           </p>
-
           <p className="font-[400] text-[20px] text-[#546881] text-center mx-auto">
             Connect to licensed suppliers, access bulk medicine inventory, and{" "}
             <br className="max-md:hidden" />
             manage your distribution with ease.
           </p>
-
           <a href="#waitlist">
             <Button
               children="JOIN WAITLIST"
@@ -96,7 +99,7 @@ export default function HeroSection() {
 
             <div className="absolute bottom-0  left-1/2 -translate-x-1/2 flex items-end justify-center gap-[10px]">
               <Image
-                className="max-md:w-[40px] max-md:ml-[80px]  z-100 translate-y-[-170px] translate-x-[100px] max-md:translate-x-[0px] hover-flip"
+                className="max-md:w-[40px] max-md:ml-[80px]  z-100 translate-y-[-170px] translate-x-[100px] max-md:translate-x-[0px] float-bounce"
                 src="/images/waitlist-Hover.png"
                 height={82}
                 width={84}
@@ -120,7 +123,7 @@ export default function HeroSection() {
               />
 
               <Image
-                className="max-md:w-[40px] z-100 max-md:mr-[80px]  translate-x-[-150px] max-md:translate-x-[-30px] translate-y-[-100px] max-md:translate-y-[-200px]  hover-flip"
+                className="max-md:w-[40px] z-100 max-md:mr-[80px]  translate-x-[-150px] max-md:translate-x-[-30px] translate-y-[-100px] max-md:translate-y-[-200px]  float-bounce"
                 src="/images/waitlist-Hover.png"
                 height={30}
                 width={84}

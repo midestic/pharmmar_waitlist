@@ -48,27 +48,19 @@ export default function WaitlistFAQ() {
   return (
     <div className="bg-[#f8fbff] p-[24px] max-md:bg-white">
       <div className="relative  bg-[#F0F9FB] rounded-[40px] space-y-[58px] overflow-hidden">
-        <Image
+        {/* <Image
           src="/images/waitlist-group-2.png"
           alt="decorative"
           width={236}
           height={323}
           className="absolute bottom-[40px] left-[40px] object-contain z-2  translate-y-[-250px] translate-x-[60px] opacity-20 max-md:hidden "
-        />
+        /> */}
 
         <div className="bg-[#F2F4F7] max-md:bg-white rounded-[40px] py-[64px] max-md:p-0 flex flex-col gap-[64px] max-md:gap-[40px]">
           <div className="space-y-[18px]">
             <motion.div
-              className="bg-white py-[12px] px-[16px] border border-[#EBEEF2] flex items-center gap-[8px] rounded-full w-fit mx-auto cursor-pointer"
-              whileHover={{
-                scale: 1.05,
-                boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.08)",
-              }}
-              transition={{
-                type: "spring",
-                stiffness: 300,
-                damping: 15,
-              }}
+              className="bg-white py-[12px] px-[16px] border border-[#EBEEF2] flex items-center gap-[8px] rounded-full w-fit mx-auto cursor-pointer select-none"
+              // No hover scale/shadow on the container → stays perfectly still
             >
               <Image
                 src="/icons/message-question.svg"
@@ -81,21 +73,35 @@ export default function WaitlistFAQ() {
                 GOT QUESTIONS, WE HAVE ANSWERS
               </p>
 
-              <p className="font-[600] text-[14px] text-[#179AB3] max-md:hidden">
-                <a href="#waitlist">JOIN WAITLIST</a>
-              </p>
-
+              {/* This inner wrapper isolates the hover animation */}
               <motion.div
-                whileHover={{ x: 4 }}
-                transition={{ type: "spring", stiffness: 300, damping: 10 }}
-                className="max-md:hidden"
+                className="flex items-center gap-[10px]"
+                whileHover={{ scale: 1.12 }}
+                transition={{ type: "spring", stiffness: 420, damping: 14 }}
               >
-                <Image
-                  src="/icons/waitlist-arrow-right.svg"
-                  height={18}
-                  width={18}
-                  alt="arrow"
-                />
+                {/* JOIN WAITLIST — scales + color boost */}
+                <motion.p
+                  className="font-[600] text-[14px] text-[#179AB3] origin-left whitespace-nowrap max-md:hidden"
+                  whileHover={{ color: "#11a8c5" }}
+                >
+                  <a href="#waitlist" className="block">
+                    JOIN WAITLIST
+                  </a>
+                </motion.p>
+
+                {/* Arrow — moves right independently */}
+                <motion.div
+                  whileHover={{ x: 9 }}
+                  transition={{ type: "spring", stiffness: 500, damping: 12 }}
+                  className="flex-shrink-0 max-md:hidden"
+                >
+                  <Image
+                    src="/icons/waitlist-arrow-right.svg"
+                    height={18}
+                    width={18}
+                    alt="arrow"
+                  />
+                </motion.div>
               </motion.div>
             </motion.div>
 

@@ -10,16 +10,8 @@ export default function HowItWorks() {
       <div className="bg-white rounded-[40px] py-[70px] px-[120px] max-md:px-0 flex flex-col gap-[70px]">
         <div className="space-y-[18px]">
           <motion.div
-            className="bg-white py-[12px] px-[16px] border border-[#EBEEF2] flex items-center gap-[8px] rounded-full w-fit mx-auto cursor-pointer"
-            whileHover={{
-              scale: 1.05,
-              boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.08)",
-            }}
-            transition={{
-              type: "spring",
-              stiffness: 300,
-              damping: 15,
-            }}
+            className="bg-white py-[12px] px-[16px] border border-[#EBEEF2] flex items-center gap-[8px] rounded-full w-fit mx-auto cursor-pointer select-none"
+            // No hover effect on the container → no scaling/shadow
           >
             <Image src="/icons/share.svg" height={18} width={18} alt="share" />
 
@@ -27,20 +19,35 @@ export default function HowItWorks() {
               HOW IT WORKS
             </p>
 
-            <p className="font-[600] text-[14px] text-[#179AB3]">
-              <a href="#waitlist">JOIN WAITLIST</a>
-            </p>
-
+            {/* This wrapper triggers scale only on hover — isolates the animation */}
             <motion.div
-              whileHover={{ x: 4 }}
-              transition={{ type: "spring", stiffness: 300, damping: 10 }}
+              className="flex items-center gap-[10px]"
+              whileHover={{ scale: 1.12 }}
+              transition={{ type: "spring", stiffness: 400, damping: 14 }}
             >
-              <Image
-                src="/icons/waitlist-arrow-right.svg"
-                height={18}
-                width={18}
-                alt="arrow"
-              />
+              {/* JOIN WAITLIST text — scales + optional color boost */}
+              <motion.p
+                className="font-[600] text-[14px] text-[#179AB3] origin-left whitespace-nowrap"
+                whileHover={{ color: "#11a8c5" }} // optional: brighter on hover
+              >
+                <a href="#waitlist" className="block">
+                  JOIN WAITLIST
+                </a>
+              </motion.p>
+
+              {/* Arrow — moves right independently */}
+              <motion.div
+                whileHover={{ x: 8 }}
+                transition={{ type: "spring", stiffness: 500, damping: 12 }}
+                className="flex-shrink-0"
+              >
+                <Image
+                  src="/icons/waitlist-arrow-right.svg"
+                  height={18}
+                  width={18}
+                  alt="arrow"
+                />
+              </motion.div>
             </motion.div>
           </motion.div>
 
@@ -64,19 +71,19 @@ export default function HowItWorks() {
           </p>
         </div>
 
-        <div className="flex gap-[40px] justify-center max-md:flex-col max-md:items-center">
+        <div className="flex gap-[40px] justify-center max-md:flex-col max-md:items-center flex-wrap">
           {howData.map((items, i) => (
             <div
               key={i}
-              className="min-w-[357.33px] flex flex-col gap-[24px] rounded-[24px] bg-cover bg-center bg-no-repeat"
+              className="max-w-[357.33px] h-auto flex flex-col gap-[24px] rounded-[24px] bg-cover bg-center bg-no-repeat"
             >
               <div
-                className="bg-[#F5F7F9] h-[240px] rounded-[24px] flex justify-center items-center"
+                className="bg-[#F5F7F9] w-full h-[240px] rounded-[24px] flex justify-center items-center"
                 style={{
                   backgroundImage: `url(${items.bgImage})`,
                 }}
               >
-                {items.title === "Sign Up" && (
+                {items.title === "Sign up to unlock exclusive benefits!" && (
                   <motion.div
                     className="flex gap-[29px]"
                     initial="visible"
@@ -110,13 +117,14 @@ export default function HowItWorks() {
                   </motion.div>
                 )}
 
-                {items.title === "Browse Inventory" && (
+                {items.title ===
+                  "Search for what you need and compare prices to find the best deal." && (
                   <motion.div
                     className="flex gap-[7.73px]"
                     initial="visible"
                     animate="visible"
                   >
-                    {[items.img1, items.img2].map(
+                    {[items.img1].map(
                       (img, index) =>
                         img && (
                           <motion.div
@@ -133,8 +141,8 @@ export default function HowItWorks() {
                           >
                             <Image
                               src={img}
-                              height={index === 0 ? 32 : 30.94}
-                              width={index === 0 ? 81.38 : 224.95}
+                              height={32.23}
+                              width={314.07}
                               alt="shop-add"
                             />
                           </motion.div>
@@ -143,7 +151,8 @@ export default function HowItWorks() {
                   </motion.div>
                 )}
 
-                {items.title === "Order & Track" && (
+                {items.title ===
+                  "Effortlessly Order and Track Your Purchases!" && (
                   <motion.div
                     className="flex gap-[7.73px]"
                     initial="visible"

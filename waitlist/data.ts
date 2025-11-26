@@ -27,21 +27,21 @@ export const howData: HowTypes[] = [
     bgImage: null,
     height: 52,
     width: 214,
-    title: "Sign Up",
+    title: "Sign up to unlock exclusive benefits!",
     description:
-      "Set up your distributor account quickly in just a few minutes by providing verified business details, ensuring a smooth and efficient registration process.",
+      "Set up your distributor account quickly in just a few minutes by providing verified business details.",
   },
 
   {
-    img1: "/icons/category.svg",
-    img2: "/icons/search.svg",
+    img1: "/icons/inventory.svg",
+    img2: null,
     img3: null,
     bgImage: null,
     height: 32.23,
     width: 314.07,
-    title: "Browse Inventory",
+    title: "Search for what you need and compare prices to find the best deal.",
     description:
-      "Set up your distributor account quickly in just a few minutes by providing verified business details, ensuring a smooth and efficient registration process.",
+      "Browse through a wide range of verified pharmaceutical products from trusted suppliers. You can compare different prices and choose a distributor that fits your budget.",
   },
 
   {
@@ -51,9 +51,9 @@ export const howData: HowTypes[] = [
     bgImage: "/images/waitlist-upscale.png",
     height: 171.07,
     width: 243.37,
-    title: "Order & Track",
+    title: "Effortlessly Order and Track Your Purchases!",
     description:
-      "Set up your distributor account quickly in just a few minutes by providing verified business details, ensuring a smooth and efficient registration process.",
+      "Place bulk orders with ease, receive real-time updates on your shipments, and manage all your deliveries directly from your personalized dashboard.",
   },
 ];
 
