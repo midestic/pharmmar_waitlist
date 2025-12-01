@@ -32,8 +32,8 @@ export default function Footer() {
           </svg>
 
           <p className="font-[400] text-[24px] text-white  mt-[20px] max-md:w-[100%]">
-            Empowering pharmaceutical <br className="max-md:hidden" />{" "}
-            distribution across africa.
+            Empowering Pharmaceutical <br className="max-md:hidden" />
+            Distribution Across Africa.
           </p>
         </div>
 

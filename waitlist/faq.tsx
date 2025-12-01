@@ -100,7 +100,7 @@ export default function WaitlistFAQ() {
 
               {/* This inner wrapper isolates the hover animation */}
               <motion.div
-                className="flex items-center gap-[10px]"
+                className="flex items-center gap-[10px] max-md:hidden"
                 whileHover="wiggle"
                 variants={{
                   wiggle: {
@@ -114,7 +114,7 @@ export default function WaitlistFAQ() {
                 }}
               >
                 <motion.p
-                  className="font-[600] text-[14px] text-[#179AB3] origin-left whitespace-nowrap"
+                  className="font-[600] text-[14px] text-[#179AB3] origin-left whitespace-nowrap "
                   whileHover={{ color: "#11a8c5" }}
                 >
                   <a href="#waitlist" className="block">
