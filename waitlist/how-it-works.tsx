@@ -19,26 +19,32 @@ export default function HowItWorks() {
               HOW IT WORKS
             </p>
 
-            {/* This wrapper triggers scale only on hover — isolates the animation */}
             <motion.div
               className="flex items-center gap-[10px]"
-              whileHover={{ scale: 1.12 }}
-              transition={{ type: "spring", stiffness: 400, damping: 14 }}
+              whileHover="wiggle"
+              variants={{
+                wiggle: {
+                  y: [0, -6, 6, -6, 6, 0],
+                  transition: {
+                    duration: 0.3,
+                    ease: "easeInOut",
+                    times: [0, 0.2, 0.4, 0.6, 0.8, 1],
+                  },
+                },
+              }}
             >
-              {/* JOIN WAITLIST text — scales + optional color boost */}
               <motion.p
                 className="font-[600] text-[14px] text-[#179AB3] origin-left whitespace-nowrap"
-                whileHover={{ color: "#11a8c5" }} // optional: brighter on hover
+                whileHover={{ color: "#11a8c5" }}
               >
                 <a href="#waitlist" className="block">
                   JOIN WAITLIST
                 </a>
               </motion.p>
 
-              {/* Arrow — moves right independently */}
               <motion.div
-                whileHover={{ x: 8 }}
-                transition={{ type: "spring", stiffness: 500, damping: 12 }}
+                whileHover={{ x: 10 }}
+                transition={{ type: "spring", stiffness: 600, damping: 15 }}
                 className="flex-shrink-0"
               >
                 <Image
@@ -75,7 +81,7 @@ export default function HowItWorks() {
           {howData.map((items, i) => (
             <div
               key={i}
-              className="max-w-[357.33px] h-auto flex flex-col gap-[24px] rounded-[24px] bg-cover bg-center bg-no-repeat"
+              className="max-w-[357.33px] max-md:max-w-full h-auto flex flex-col gap-[24px] rounded-[24px] bg-cover bg-center bg-no-repeat"
             >
               <div
                 className="bg-[#F5F7F9] w-full h-[240px] rounded-[24px] flex justify-center items-center"

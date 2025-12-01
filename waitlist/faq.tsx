@@ -19,29 +19,54 @@ export default function WaitlistFAQ() {
 
   const faqs = [
     {
-      question: "What is Phammar?",
+      question: "What exactly is PharmMar?",
       answer:
-        "Phammar is a platform that connects pharmacies with suppliers and customers for seamless operations and visibility.",
+        "PharmMar is a marketplace that connects licensed pharmaceutical distributors with pharmacies, clinics, and hospital pharmacies. You can find trusted products, verified sellers, and fast delivery — all in one place.",
     },
     {
-      question: "How to sign up?",
+      question: "Who is PharmMar for?",
       answer:
-        "Simply visit our website, click on 'Join Waitlist', and follow the registration steps to get started.",
+        "PharmMar is designed for pharmacy owners, hospital pharmacies, clinics, wholesalers, and licensed distributors who want a safe, simple, and reliable way to buy or sell pharmaceutical products.",
     },
     {
-      question: "Is there a fee?",
+      question: "Why should I join the waitlist?",
       answer:
-        "Joining Phammar is free! You only pay transaction fees when you start selling.",
+        "Joining the waitlist gives you early access, priority onboarding, and special launch perks — including discounts, verified suppliers, and access to high-demand products before everyone else.",
     },
     {
-      question: "How can I sell?",
+      question: "When will PharmMar officially launch?",
       answer:
-        "Once verified, you can list your products and start receiving orders directly from customers.",
+        "We’re in the final testing and onboarding phase. People on the waitlist will be invited to join before we open to the public.",
     },
     {
-      question: "What support is available?",
+      question: "Is PharmMar registered and compliant?",
       answer:
-        "We offer 24/7 customer support and onboarding guidance for all users.",
+        "Yes. We only work with licensed distributors and verified pharmacies. Every seller is checked through CAC, PCN, NAFDAC, and ID verification before they can list products.",
+    },
+    {
+      question: "Is it safe to buy medicines on the platform?",
+      answer:
+        "Yes, it is. Every seller must pass strict KYC and regulatory checks. Products are vetted, batches can be traced, and you only buy from verified, reputable distributors.",
+    },
+    {
+      question: "How does the platform work?",
+      answer:
+        "Just search for the medicines you need, compare prices from verified distributors, place your order, and choose delivery or pickup. It’s simple, fast, and transparent.",
+    },
+    {
+      question: "What does it cost to use PharmMar?",
+      answer:
+        "Joining the waitlist is free. Buyers can use the platform at no cost. Distributors only pay a small fee when they make a sale — no hidden charges.",
+    },
+    {
+      question: "What happens after I join the waitlist?",
+      answer:
+        "You’ll get a confirmation email and occasional updates. When your spot is ready, we’ll send you a private link so you can create your account.",
+    },
+    {
+      question: "Will my information be safe?",
+      answer:
+        "Yes. We follow strict data protection rules. Your information is never shared or sold — it’s used only to keep you updated and help you onboard smoothly.",
     },
   ];
 
@@ -76,12 +101,20 @@ export default function WaitlistFAQ() {
               {/* This inner wrapper isolates the hover animation */}
               <motion.div
                 className="flex items-center gap-[10px]"
-                whileHover={{ scale: 1.12 }}
-                transition={{ type: "spring", stiffness: 420, damping: 14 }}
+                whileHover="wiggle"
+                variants={{
+                  wiggle: {
+                    y: [0, -6, 6, -6, 6, 0],
+                    transition: {
+                      duration: 0.3,
+                      ease: "easeInOut",
+                      times: [0, 0.2, 0.4, 0.6, 0.8, 1],
+                    },
+                  },
+                }}
               >
-                {/* JOIN WAITLIST — scales + color boost */}
                 <motion.p
-                  className="font-[600] text-[14px] text-[#179AB3] origin-left whitespace-nowrap max-md:hidden"
+                  className="font-[600] text-[14px] text-[#179AB3] origin-left whitespace-nowrap"
                   whileHover={{ color: "#11a8c5" }}
                 >
                   <a href="#waitlist" className="block">
@@ -89,11 +122,10 @@ export default function WaitlistFAQ() {
                   </a>
                 </motion.p>
 
-                {/* Arrow — moves right independently */}
                 <motion.div
-                  whileHover={{ x: 9 }}
-                  transition={{ type: "spring", stiffness: 500, damping: 12 }}
-                  className="flex-shrink-0 max-md:hidden"
+                  whileHover={{ x: 10 }}
+                  transition={{ type: "spring", stiffness: 600, damping: 15 }}
+                  className="flex-shrink-0"
                 >
                   <Image
                     src="/icons/waitlist-arrow-right.svg"
@@ -148,8 +180,8 @@ export default function WaitlistFAQ() {
             <p className="font-[400] text-[18px] text-[#546881] text-center max-md:font-[400] max-md:text-[18px]">
               We&apos;re here to help you!
             </p>
-            <button className="w-[120px] h-[54px] bg-white rounded-full font-[600] text-[14px] text-[#1D242D] max-md:w-[100%]">
-              Contact Us
+            <button className="h-[54px] bg-white rounded-full font-[600] text-[14px] text-[#1D242D] max-md:w-[100%] px-[20px]">
+              Contact Support for more Information{" "}
             </button>
           </div>
         </div>

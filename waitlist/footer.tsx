@@ -11,9 +11,9 @@ export default function Footer() {
   const date = new Date();
   const year = date.getFullYear();
   return (
-    <div className="w-[100%] p-[20px] max-md:py-[24px] max-md:px-[16px] bg-[#081327]">
+    <div className="w-[100%] max-md:py-[24px] max-md:px-[16px] bg-[#081327] rounded-[40px] max-md:rounded-[0px]">
       <div className=" mx-auto rounded-[40px] space-y-[100px] py-[70px] px-[72px] bg-[#081327] max-md:w-[100%] max-md:rounded-[0] max-md:py-[0] max-md:px-[24px]">
-        <div className=" max-md:w-[100%]">
+        <div className=" max-md:w-[100%] max-md:flex max-md:flex-col max-md:items-center max-md:text-center">
           <svg
             width="171"
             height="44"

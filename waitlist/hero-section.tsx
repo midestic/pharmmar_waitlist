@@ -39,16 +39,16 @@ export default function HeroSection() {
               transition={{ type: "spring", stiffness: 400, damping: 15 }}
             >
               {/* The text that scales */}
-              <motion.p
+              {/* <motion.p
                 className="font-[600] text-[14px] text-[#179AB3] origin-left"
                 // Optional: add subtle color brighten on hover
                 whileHover={{ color: "#11a8c5" }}
               >
                 <a href="#waitlist">JOIN WAITLIST</a>
-              </motion.p>
+              </motion.p> */}
 
               {/* The arrow that moves right */}
-              <motion.div
+              {/* <motion.div
                 whileHover={{ x: 6 }}
                 transition={{ type: "spring", stiffness: 400, damping: 12 }}
                 className="flex-shrink-0"
@@ -59,7 +59,7 @@ export default function HeroSection() {
                   width={18}
                   alt="arrow"
                 />
-              </motion.div>
+              </motion.div> */}
             </motion.div>
           </motion.div>{" "}
           <p className="text-center mx-auto">

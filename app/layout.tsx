@@ -73,7 +73,10 @@ export default function RootLayout({
             </div>
             {children}
           </div>
-          <Footer />
+
+          <div className="p-[24px] max-md:p-[0px]">
+            <Footer />
+          </div>
         </div>
       </body>
     </html>
