@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     siteName: "Pharmmar",
     images: [
       {
-        url: "/images/og.png", // <-- your OG image path
+        url: "/og.png", // <-- your OG image path
         width: 1200,
         height: 630,
         alt: "Pharmmar Open Graph Image",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: "Pharmmar",
     description:
       "Bridging the gap between pharmaceutical distributors and pharmacies in Nigeria",
-    images: ["/images/og.png"], // same image
+    images: ["/og.png"], // same image
   },
 };
 
