@@ -37,7 +37,7 @@ export default function Footer() {
           </p>
         </div>
 
-        <div className="w-[100%] mx-auto flex justify-between items-start gap-x-[4px] mt-[20px]  max-md:flex-col max-md:w-[100%] max-md:gap-y-[40px] max-md:items-center">
+        {/* <div className="w-[100%] mx-auto flex justify-between items-start gap-x-[4px] mt-[20px]  max-md:flex-col max-md:w-[100%] max-md:gap-y-[40px] max-md:items-center">
           <div className="w-[269.5px] max-md:w-[100%] max-md:flex max-md:flex-col max-md:items-center">
             <p className="font-[500] text-[15px] text-gray-500 mb-[20px]">
               QUICK LINKS
@@ -121,7 +121,7 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-        </div>
+        </div> */}
 
         <div className="w-[100%]   flex justify-between items-center mt-[20px]  max-md:w-[100%]  max-md:flex-col max-md:mt-[40px] max-md:py-[24px] max-md:gap-y-[24px]  max-md:items-center">
           <div className="gap-[10px] h-[42px]  flex justify-between items-center max-md:justify-center  max-md:w-full">
