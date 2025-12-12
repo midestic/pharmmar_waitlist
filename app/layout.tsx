@@ -13,7 +13,31 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "Pharmmar",
   description:
-    "Bridging the gap between pharmaceutical distributor and pharmacies in Nigerian",
+    "Bridging the gap between pharmaceutical distributors and pharmacies in Nigeria",
+  openGraph: {
+    title: "Pharmmar",
+    description:
+      "Bridging the gap between pharmaceutical distributors and pharmacies in Nigeria",
+    url: "https://pharmmar.com", // replace with your actual domain
+    siteName: "Pharmmar",
+    images: [
+      {
+        url: "/images/og.png", // <-- your OG image path
+        width: 1200,
+        height: 630,
+        alt: "Pharmmar Open Graph Image",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pharmmar",
+    description:
+      "Bridging the gap between pharmaceutical distributors and pharmacies in Nigeria",
+    images: ["/images/og.png"], // same image
+  },
 };
 
 export default function RootLayout({
