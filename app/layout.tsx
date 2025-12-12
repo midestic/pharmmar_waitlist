@@ -11,8 +11,9 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Pharmar",
-  description: "Pharmaceuticals",
+  title: "Pharmmar",
+  description:
+    "Bridging the gap between pharmaceutical distributor and pharmacies in Nigerian",
 };
 
 export default function RootLayout({
