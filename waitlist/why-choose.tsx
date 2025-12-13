@@ -38,7 +38,7 @@ export default function WhyChoose() {
           </p>
         </div>
 
-        <div className="flex gap-[40px] justify-center max-md:flex-col max-md:items-center">
+        <div className="flex gap-[40px] justify-center max-md:flex-col max-md:items-center flex-wrap">
           {whyData.map((items: ItemType, i) => (
             <div key={i} className="min-w-[357.33px] flex flex-col gap-[24px]">
               <div className="bg-[#F5F7F9] h-[240px] rounded-[24px] flex justify-center items-center">

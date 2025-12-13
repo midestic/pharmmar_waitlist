@@ -146,7 +146,10 @@ export default function DistributorForm() {
           text="150+ Pre-registered"
         />
         <DetailBox icon="/icons/waitlist-clock.svg" text="Launching Q2 2026" />
-        <DetailBox icon="/icons/waitlist-star.svg" text="Launching Q2 2026" />
+        <DetailBox
+          icon="/icons/waitlist-star.svg"
+          text="Early Access Benefit"
+        />
       </div>
 
       {/* Background map */}
