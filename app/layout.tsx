@@ -11,6 +11,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.pharmmar.com"), // <-- Add this line
   title: "Pharmmar",
   description:
     "Bridging the gap between pharmaceutical distributors and pharmacies in Nigeria",
@@ -18,11 +19,11 @@ export const metadata: Metadata = {
     title: "Pharmmar",
     description:
       "Bridging the gap between pharmaceutical distributors and pharmacies in Nigeria",
-    url: "https://www.pharmmar.com", // replace with your actual domain
+    url: "https://www.pharmmar.com",
     siteName: "Pharmmar",
     images: [
       {
-        url: "/og.png", // <-- your OG image path
+        url: "/og.png", // Relative path is fine now
         width: 1200,
         height: 630,
         alt: "Pharmmar Open Graph Image",
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
     title: "Pharmmar",
     description:
       "Bridging the gap between pharmaceutical distributors and pharmacies in Nigeria",
-    images: ["/og.png"], // same image
+    images: ["/og.png"],
   },
 };
 
