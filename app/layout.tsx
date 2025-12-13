@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     title: "Pharmmar",
     description:
       "Bridging the gap between pharmaceutical distributors and pharmacies in Nigeria",
-    url: "https://pharmmar.com", // replace with your actual domain
+    url: "https://www.pharmmar.com", // replace with your actual domain
     siteName: "Pharmmar",
     images: [
       {
