@@ -7,17 +7,17 @@ import { databases, ID } from "@/lib/appwrite";
 import type { Models } from "appwrite";
 
 const DB_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID!;
-const COLLECTION_ID = process.env.NEXT_PUBLIC_DISTRIBUTOR_COLLECTION_ID!;
+const COLLECTION_ID = process.env.NEXT_PUBLIC_BUSINESS_COLLECTION_ID!;
 
 interface DistributorDocument extends Models.Document {
-  companyName: string;
-  businessEmail: string;
+  businessName: string;
+  email: string;
   phoneNumber: string;
 }
 
-export default function DistributorForm() {
-  const [companyName, setCompanyName] = useState("");
-  const [businessEmail, setBusinessEmail] = useState("");
+export default function BusinessForm() {
+  const [businessName, setBusinessName] = useState("");
+  const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
 
   const [loading, setLoading] = useState(false);
@@ -35,16 +35,16 @@ export default function DistributorForm() {
         COLLECTION_ID,
         ID.unique(),
         {
-          companyName,
-          businessEmail,
+          businessName, // ← changed
+          email, // ← changed
           phoneNumber,
         }
       );
 
       setSubmitted(true);
       // Reset form
-      setCompanyName("");
-      setBusinessEmail("");
+      setBusinessName("");
+      setEmail("");
       setPhoneNumber("");
     } catch (err: any) {
       console.error(err);
@@ -71,42 +71,44 @@ export default function DistributorForm() {
         onSubmit={handleSubmit}
         className="flex flex-col gap-[32px] w-full relative z-10"
       >
-        {/* Your inputs (unchanged) */}
+        {/* Business Name */}
         <div className="flex flex-col gap-[8px]">
           <label
             className="font-[400] text-[14px] text-[#3D4C5E]"
-            htmlFor="companyName"
+            htmlFor="businessName"
           >
-            Company Name <span className="text-[#FF3B30]">*</span>
+            Business Name <span className="text-[#FF3B30]">*</span>
           </label>
           <Input
-            id="companyName"
-            placeholder="Enter your company name"
-            value={companyName}
-            onChange={(e) => setCompanyName(e.target.value)}
+            id="businessName" // updated id for consistency
+            placeholder="Enter your business name" // slightly friendlier placeholder
+            value={businessName}
+            onChange={(e) => setBusinessName(e.target.value)}
             required
             className="bg-white rounded-[12px] border placeholder:text-[14px] placeholder:font-[400] placeholder:text-[#A3ADBB]"
           />
         </div>
 
+        {/* Email */}
         <div className="flex flex-col gap-[8px]">
           <label
             className="font-[400] text-[14px] text-[#3D4C5E]"
-            htmlFor="businessEmail"
+            htmlFor="email"
           >
-            Business Email <span className="text-[#FF3B30]">*</span>
+            Email <span className="text-[#FF3B30]">*</span>
           </label>
           <Input
-            id="businessEmail"
+            id="email"
             type="email"
             placeholder="Enter your email address"
-            value={businessEmail}
-            onChange={(e) => setBusinessEmail(e.target.value)}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             required
             className="bg-white rounded-[12px] border placeholder:text-[14px] placeholder:font-[400] placeholder:text-[#A3ADBB]"
           />
         </div>
 
+        {/* Phone Number */}
         <div className="flex flex-col gap-[8px]">
           <label
             className="font-[400] text-[14px] text-[#3D4C5E]"
@@ -126,7 +128,7 @@ export default function DistributorForm() {
 
         <div className="flex justify-center items-center">
           <Button
-            type="submit" // ← Changed from type="button" to actually submit!
+            type="submit"
             variant="waitlistBtn"
             size="waitlistBtn"
             disabled={loading}
@@ -138,7 +140,7 @@ export default function DistributorForm() {
         {error && <p className="text-red-500 text-center -mt-6">{error}</p>}
       </form>
 
-      {/* Detail boxes */}
+      {/* Detail boxes - unchanged */}
       <div className="flex justify-center items-center gap-[32px] max-md:flex-col max-md:items-center">
         <DetailBox
           icon="/icons/waitlist-search-normal.svg"
@@ -151,7 +153,7 @@ export default function DistributorForm() {
         />
       </div>
 
-      {/* Background map */}
+      {/* Background map - unchanged */}
       <div className="absolute bottom-0 left-0 w-full -z-10">
         <Image
           src="/images/map-base.png"
@@ -166,7 +168,7 @@ export default function DistributorForm() {
   );
 }
 
-// DetailBox component stays the same
+// DetailBox component (unchanged)
 type DetailType = { icon: string; text: string };
 const DetailBox = ({ icon, text }: DetailType) => (
   <div className="flex gap-[10px] items-center">

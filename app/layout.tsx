@@ -11,7 +11,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.pharmmar.com"), // <-- Add this line
+  metadataBase: new URL("https://www.pharmmar.com"),
   title: "Pharmmar",
   description:
     "Bridging the gap between pharmaceutical distributors and pharmacies in Nigeria",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     siteName: "Pharmmar",
     images: [
       {
-        url: "/og.png", // Relative path is fine now
+        url: "/og.png",
         width: 1200,
         height: 630,
         alt: "Pharmmar Open Graph Image",
@@ -51,11 +51,11 @@ export default function RootLayout({
       <body suppressHydrationWarning className={dmSans.className}>
         <div className="max-w-[1920px] mx-auto overflow-x-hidden">
           <Navbar />
-          <div className="max-w-[1920px] mx-auto  ">
+          <div className="max-w-[1920px] mx-auto">
             <div className=" right-0 flex justify-end fixed  z-100">
               <div className="flex flex-col items-center gap-[90.67px] mt-[30vh] max-md:hidden">
                 <p className="font-[600] text-[14px] text-[#B8E5EE] rotate-90">
-                  CHECKOUT OUR SOCIALS{" "}
+                  CHECKOUT OUR SOCIALS
                 </p>
 
                 <div className="space-y-[10px]">
@@ -69,12 +69,17 @@ export default function RootLayout({
                   </div>
 
                   <div className="bg-[#0C4D5A] w-[40px] h-[40px] rounded-full flex justify-center items-center">
-                    <Image
-                      src={"/images/waitlist-x.png"}
-                      height={19.88}
-                      width={20}
-                      alt="x icon"
-                    />
+                    <a
+                      target="_blank"
+                      href="https://x.com/pharmmalimited?s=11&t=AnNsOYXId9lDvfqnWfRBfQ"
+                    >
+                      <Image
+                        src={"/images/waitlist-x.png"}
+                        height={19.88}
+                        width={20}
+                        alt="x icon"
+                      />
+                    </a>
                   </div>
 
                   <div className="bg-[#0C4D5A] w-[40px] h-[40px] rounded-full flex justify-center items-center">

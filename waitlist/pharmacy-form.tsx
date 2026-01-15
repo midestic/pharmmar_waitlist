@@ -10,8 +10,8 @@ const COLLECTION_ID = process.env.NEXT_PUBLIC_PHARMACY_COLLECTION_ID!;
 
 export default function PharmacyForm() {
   const [pharmacyName, setPharmacyName] = useState("");
-  const [businessEmail, setBusinessEmail] = useState("");
-  const [personalEmail, setPersonalEmail] = useState("");
+  const [fullName, setFullName] = useState(""); // ← New state for "Name"
+  const [email, setEmail] = useState(""); // ← Renamed from businessEmail
   const [phoneNumber, setPhoneNumber] = useState("");
 
   const [loading, setLoading] = useState(false);
@@ -26,16 +26,16 @@ export default function PharmacyForm() {
     try {
       await databases.createDocument(DB_ID, COLLECTION_ID, ID.unique(), {
         pharmacyName,
-        businessEmail,
-        personalEmail,
+        fullName, // ← new field
+        email, // ← renamed
         phoneNumber,
       });
 
       setSubmitted(true);
       // Reset form
       setPharmacyName("");
-      setBusinessEmail("");
-      setPersonalEmail("");
+      setFullName("");
+      setEmail("");
       setPhoneNumber("");
     } catch (err: any) {
       console.error("Pharmacy submission error:", err);
@@ -45,7 +45,6 @@ export default function PharmacyForm() {
     }
   };
 
-  // Success Screen
   if (submitted) {
     return (
       <div className="text-center py-20">
@@ -65,6 +64,7 @@ export default function PharmacyForm() {
         onSubmit={handleSubmit}
         className="flex flex-col gap-[32px] w-full relative z-10"
       >
+        {/* Pharmacy Name */}
         <div className="flex flex-col gap-[8px]">
           <label
             className="font-[400] text-[14px] text-[#3D4C5E]"
@@ -82,42 +82,44 @@ export default function PharmacyForm() {
           />
         </div>
 
+        {/* Name (likely full name / owner name) */}
         <div className="flex flex-col gap-[8px]">
           <label
             className="font-[400] text-[14px] text-[#3D4C5E]"
-            htmlFor="businessEmail"
+            htmlFor="fullName"
           >
-            Business Email <span className="text-[#FF3B30]">*</span>
+            Full Name <span className="text-[#FF3B30]">*</span>
           </label>
           <Input
-            id="businessEmail"
-            type="email"
-            placeholder="Enter your business email"
-            value={businessEmail}
-            onChange={(e) => setBusinessEmail(e.target.value)}
+            id="fullName"
+            placeholder="Enter your full name"
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
             required
             className="bg-white rounded-[12px] border placeholder:text-[14px] placeholder:font-[400] placeholder:text-[#A3ADBB]"
           />
         </div>
 
+        {/* Email (now the main one) */}
         <div className="flex flex-col gap-[8px]">
           <label
             className="font-[400] text-[14px] text-[#3D4C5E]"
-            htmlFor="personalEmail"
+            htmlFor="email"
           >
-            Personal Email <span className="text-[#FF3B30]">*</span>
+            Email <span className="text-[#FF3B30]">*</span>
           </label>
           <Input
-            id="personalEmail"
+            id="email"
             type="email"
-            placeholder="Enter your personal email"
-            value={personalEmail}
-            onChange={(e) => setPersonalEmail(e.target.value)}
+            placeholder="Enter your email address"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             required
             className="bg-white rounded-[12px] border placeholder:text-[14px] placeholder:font-[400] placeholder:text-[#A3ADBB]"
           />
         </div>
 
+        {/* Phone Number */}
         <div className="flex flex-col gap-[8px]">
           <label
             className="font-[400] text-[14px] text-[#3D4C5E]"
@@ -137,7 +139,7 @@ export default function PharmacyForm() {
 
         <div className="flex justify-center items-center">
           <Button
-            type="submit" // ← FIXED: Now actually submits!
+            type="submit"
             variant="waitlistBtn"
             size="waitlistBtn"
             disabled={loading}
@@ -149,7 +151,7 @@ export default function PharmacyForm() {
         {error && <p className="text-red-500 text-center -mt-6">{error}</p>}
       </form>
 
-      {/* Detail Boxes */}
+      {/* Detail Boxes – unchanged */}
       <div className="flex justify-center items-center gap-[32px] max-md:flex-col max-md:items-center">
         <DetailBox
           icon="/icons/waitlist-search-normal.svg"
@@ -162,7 +164,7 @@ export default function PharmacyForm() {
         />
       </div>
 
-      {/* Background Map */}
+      {/* Background Map – unchanged */}
       <div className="absolute bottom-0 left-0 w-full -z-10">
         <Image
           src="/images/map-base.png"

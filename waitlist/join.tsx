@@ -2,6 +2,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import DistributorForm from "./distributor-form";
 import PharmacyForm from "./pharmacy-form";
 import Image from "next/image";
+import BusinessForm from "./business-form";
 
 export default function Join() {
   return (
@@ -52,7 +53,8 @@ export default function Join() {
 
             <div className="max-md:px-[24px]">
               <TabsContent value="distributor">
-                <DistributorForm />
+                {/* <DistributorForm /> */}
+                <BusinessForm />
               </TabsContent>
               <TabsContent value="pharmacy">
                 <PharmacyForm />
